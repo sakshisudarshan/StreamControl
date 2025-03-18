@@ -43,9 +43,8 @@
 ```bash
 git clone https://github.com/your-repo/streamcontrol.git  
 cd streamcontrol
-'''
 
- 2. **Create and Activate a Virtual Environment**
+ 2.**Create and Activate a Virtual Environment**
 ```bash
 python3 -m venv env  
 source env/bin/activate  
