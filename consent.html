@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamControl - Camera Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="consent-container">
+        <div class="logo-container">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="36" stroke="url(#gradient)" stroke-width="8"/>
+                <path d="M32 28L52 40L32 52V28Z" fill="url(#gradient)"/>
+                <defs>
+                    <linearGradient id="gradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#6C63FF"/>
+                        <stop offset="100%" stop-color="#00D9D9"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <h1 class="app-name">StreamControl</h1>
+        <p>Welcome to the future of video control! StreamControl uses gesture recognition to give you a hands-free YouTube experience.</p>
+        <p>Your camera feed is processed locally and is not recorded or transmitted anywhere.</p>
+        <p>By clicking "Proceed", you agree to allow camera access for gesture detection.</p>
+        <a href="/main" class="proceed-button">Get Started</a>
+    </div>
+</body>
+</html>
