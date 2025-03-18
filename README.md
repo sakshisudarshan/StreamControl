@@ -42,19 +42,26 @@
 ```bash
 # 1. Clone the Repository
 git clone https://github.com/your-repo/streamcontrol.git  
-cd streamcontrol  
+cd streamcontrol
+'''
 
 # 2. Create and Activate a Virtual Environment
+```bash
 python3 -m venv env  
 source env/bin/activate  
+'''
 
 # 3. Install Dependencies
+```bash
 pip install -r requirements.txt  
+'''
 
 # 4. Run the Application
+```bash
 python app.py  
+'''
 
-  
+---
 
 ## Code Overview  
 
