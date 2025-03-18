@@ -76,6 +76,16 @@
 
 ---
 
+![PHOTO-2024-12-20-14-53-12 5](https://github.com/user-attachments/assets/f1a7617f-2b86-4964-b10a-96efc358a814)
+![PHOTO-2024-12-20-14-53-12](https://github.com/user-attachments/assets/fc1a729d-0957-4f28-80e8-22b4e7978376)
+![PHOTO-2024-12-20-14-53-12 3](https://github.com/user-attachments/assets/86a413cf-3316-42e3-b314-2cece113e710)
+![PHOTO-2024-12-20-14-53-12 4](https://github.com/user-attachments/assets/1b7ce67c-03f0-49ab-b231-f2db430b0734)
+![PHOTO-2024-12-20-14-53-12 2](https://github.com/user-attachments/assets/5897bc88-4228-4558-b9ab-57883a8075c9)
+
+
+
+
+
 ## Code Overview
 
 ### 1. Backend (`app.py`)
