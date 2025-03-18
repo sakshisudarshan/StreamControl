@@ -37,52 +37,78 @@
 
 ---
 
-## Setup & Installation
+## Setup & Installation  
 
-### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-repo/streamcontrol.git
-cd streamcontrol
+# 1. Clone the Repository
+git clone https://github.com/your-repo/streamcontrol.git  
+cd streamcontrol  
 
-2. **Create and activate a virtual environment**
-   ```bash
-   python3 -m venv env
-   source env/bin/activate
-   ```
+# 2. Create and Activate a Virtual Environment
+python3 -m venv env  
+source env/bin/activate  
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 3. Install Dependencies
+pip install -r requirements.txt  
 
-   4. **Run the Application**
-      '''bash
-      python app.py
-      '''
+# 4. Run the Application
+python app.py  
 
-  ---
-  # ImageCaptionApp
+  
 
-## Overview  
-**ImageCaptionApp** is a tool that extracts text from images and generates meaningful captions using a pre-trained BLIP model. It provides an intuitive user interface built with Kivy and processes images using Flask on the backend.
+## Code Overview  
+
+### 1. Backend (`app.py`)  
+- **Flask Application**  
+   - Handles HTTP requests and serves the frontend.  
+   - Uses Flask-SocketIO for real-time communication between the backend and frontend.  
+   - Opens a video capture stream using OpenCV for gesture detection.  
+
+- **Gesture Detection**  
+   - Uses MediaPipe to track hand landmarks.  
+   - Recognizes gestures based on hand positions:  
+     - Open Palm – Play/Pause  
+     - Closed Fist – Mute/Unmute  
+     - Two Fingers – Forward 10 seconds  
+   - Sends recognized gestures to the frontend using Socket.IO.  
+
+- **YouTube Integration**  
+   - Parses YouTube URL and extracts video ID.  
+   - Loads the video into an iframe using the YouTube IFrame API.  
 
 ---
 
-## Backend (`backend.py`)  
-- Flask application to handle image processing requests.  
-- Uses **pytesseract** to extract text from images.  
-- Uses a pre-trained **BLIP model** to generate image captions.  
+### 2. Frontend (`templates/`)  
+- **HTML**  
+   - `consent.html` – Displays a consent form to enable the webcam.  
+   - `index.html` – Main interface with webcam feed, video player, and gesture guide.  
+
+- **JavaScript**  
+   - Handles YouTube IFrame API for video controls.  
+   - Listens for gesture events from the backend using Socket.IO.  
+   - Maps gestures to YouTube player actions (play, pause, mute, forward).  
+
+- **CSS**  
+   - Modern, responsive design using flexbox and grid.  
+   - Gradient color scheme and hover effects for better UX.  
 
 ---
 
-## Models (`models.py`)  
-- Contains functions for preprocessing images and generating captions using the BLIP model.  
+### 3. Static Files (`static/`)  
+- **style.css** – Styles for UI elements and layout.  
 
 ---
 
-## Frontend (`main.py`)  
-- Kivy application to create a user interface.  
-- Allows users to select images, send them to the backend for processing, and receive audible descriptions.  
+### 4. Gesture Recognition Logic  
+- **Open Palm** – Fingers extended above reference points.  
+- **Closed Fist** – Fingers curled below reference points.  
+- **Two Fingers** – Index and middle fingers extended; others curled.  
+
+---
+
+### 5. Socket.IO Communication  
+- Backend emits gesture events to frontend.  
+- Frontend listens for events and maps them to YouTube controls.  
 
 ---
 
@@ -94,10 +120,8 @@ Contributions are welcome! To contribute:
 git checkout -b feature/your-feature-name
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-
 For questions or feedback, please contact [Sakshi Sudarshan](mailto:sakshisudarshan4@gmail.com).
 
